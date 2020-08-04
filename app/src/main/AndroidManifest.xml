@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.perol.example">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <service
+            android:name=".service.BroadCastService"
+            android:enabled="true"
+            android:process=":BroadCast"
+            android:exported="true"></service>
+        <service
+            android:name=".service.SocketService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":socket" />
+        <service
+            android:name=".service.AIDLService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":AIDL" />
+
+        <activity
+            android:name=".SocketActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AIDLActivity"
+            android:label="@string/title_activity_a_i_d_l"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BroadCastActivity"
+            android:label="@string/title_activity_a_i_d_l"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MessengerActivity" />
+
+        <service
+            android:name=".service.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":messenger" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
